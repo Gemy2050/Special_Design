@@ -28,23 +28,48 @@ colorLi.forEach(li => {
 document.documentElement.style.setProperty('--main-color', window.localStorage.getItem("color"));
 
 
+// Handle Random Backgrounds Or No
+let yesButton = document.querySelector(".random-background .yes");
+let noButton = document.querySelector(".random-background .no");
+let backgroundOption = true;
 
-// Random Background Image
+document.querySelectorAll(".random-background span").forEach(el=> {
+
+    el.addEventListener("click", (e) => {
+        document.querySelectorAll(".random-background span").forEach(sp => {
+            sp.classList.remove("active");
+            
+        });
+        e.target.classList.add("active");
+
+        if(yesButton.classList.contains("active")) {
+            backgroundOption = true;
+            Random();
+        } else if(noButton.classList.contains("active")) {
+            backgroundOption = false;
+            clearInterval(backgroundInterval);
+        }
+    });
+
+});
+
+// Random Background Function
+let landing = document.querySelector(".landing-page");
+let imgArray = ["img1", "img2", "img3", "img4", "img5", "img6"];
+let backgroundInterval, randomImage;
 function Random() {
-    let landing = document.querySelector(".landing-page");
-    let imgArray = ["img1", "img2", "img3", "img4", "img5", "img6"];
-    let id = setInterval(() => {
-    let randomindex = Math.floor(Math.random() * imgArray.length);
-    let randomImage = imgArray[randomindex];
-    landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
 
-    if(noButton.classList.contains("active"))
-    landing.style.backgroundImage = `url(../images/img4.jpg)`;
-    else
-    landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
-}, 3000);
+    if(backgroundOption == true) {
+            backgroundInterval = setInterval(() => {
+            let randomindex = Math.floor(Math.random() * imgArray.length);
+            randomImage = imgArray[randomindex];
+            landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
+        }, 2000);
+    }
+
 }
 Random();
+
 
 // Handle Burger Icon Action
 let borgerIcon = document.querySelector(".header-area i");
@@ -64,17 +89,3 @@ borgerIcon.onclick = () => {
     }
 };
 
-
-
-
-let yesButton = document.querySelector(".option-box .yes");
-let noButton = document.querySelector(".option-box .no");
-
-yesButton.onclick = function() {
-    yesButton.classList.add("active");
-    noButton.classList.remove("active");
-}
-noButton.onclick = function() {
-    yesButton.classList.remove("active");
-    noButton.classList.add("active");
-}

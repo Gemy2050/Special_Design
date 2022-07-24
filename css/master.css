@@ -122,10 +122,14 @@ body {
     margin-top: 10px;
     border-radius: 6px;
     cursor: pointer;
-}
-.setting-box .option-box .active,
-.setting-box .option-box span:hover{
     background-color: var(--main-color);
+    opacity: .5;
+    transition: .3s;
+    font-size: 14px;
+    font-weight: bold;
+}
+.setting-box .option-box .active {
+    opacity: 1;
     transition: .3s;
 }
 @media (max-width: 768px) {
