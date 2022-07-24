@@ -112,8 +112,8 @@ body {
 
 @media (max-width: 768px) {
     .setting-box {
-        width: 180px;
-        left: -180px;
+        width: 190px;
+        left: -190px;
     }
 }
 /* End Setting Box */
