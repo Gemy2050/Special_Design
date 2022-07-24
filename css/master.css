@@ -150,12 +150,18 @@ body {
     margin: 0;
 }
 .header-area .logo::first-letter {
-    font-size: 40px;
+    font-size: 30px;
     color: var(--main-color);
 }
 .header-area i {
     display: none;
     font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+.header-area i:hover {
+    color: var(--main-color);
+    transition: .3s;
 }
 .header-area .links {
     list-style: none;
@@ -221,7 +227,7 @@ body {
         top: calc(100%);
         text-align: left;
         background-color: rgb(0 0 0 / 80%);
-        z-index: 20;
+        z-index: 15000;
         width: calc(100% + 20px);
         margin: 0;
         padding: 0;

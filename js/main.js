@@ -6,6 +6,11 @@ document.querySelector(".toggle-setting .fa-gear").onclick = function() {
     settingBox.classList.toggle("open");
 }
 
+document.querySelector(".landing-page").onclick = function() {
+    settingBox.classList.remove("open");
+    document.querySelector(".toggle-setting .fa-gear").classList.remove("fa-spin");
+}
+
 
 // Switch Colors
 let colorLi = document.querySelectorAll(".colors-list li");
@@ -40,9 +45,14 @@ let close = document.querySelector(".header-area .close");
 let count = 0;
 borgerIcon.onclick = () => {
     count++;
-    if (count % 2 == 0) 
+    if (count % 2 == 0) {
         nav_links.style.display = "none";
-    else 
+        document.querySelector(".toggle-setting").style.visibility = "visible";
+    }
+        
+    else {
         nav_links.style.display = "block";
+        document.querySelector(".toggle-setting").style.visibility = "hidden";
+    }
 };
 
