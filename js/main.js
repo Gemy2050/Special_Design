@@ -30,13 +30,21 @@ document.documentElement.style.setProperty('--main-color', window.localStorage.g
 
 
 // Random Background Image
-let landing = document.querySelector(".landing-page");
-let imgArray = ["img1", "img2", "img3", "img4", "img5", "img6"];
-setInterval(() => {
+function Random() {
+    let landing = document.querySelector(".landing-page");
+    let imgArray = ["img1", "img2", "img3", "img4", "img5", "img6"];
+    let id = setInterval(() => {
     let randomindex = Math.floor(Math.random() * imgArray.length);
     let randomImage = imgArray[randomindex];
     landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
-}, 10000);
+
+    if(noButton.classList.contains("active"))
+    landing.style.backgroundImage = `url(../images/img4.jpg)`;
+    else
+    landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
+}, 3000);
+}
+Random();
 
 // Handle Burger Icon Action
 let borgerIcon = document.querySelector(".header-area i");
@@ -56,3 +64,17 @@ borgerIcon.onclick = () => {
     }
 };
 
+
+
+
+let yesButton = document.querySelector(".option-box .yes");
+let noButton = document.querySelector(".option-box .no");
+
+yesButton.onclick = function() {
+    yesButton.classList.add("active");
+    noButton.classList.remove("active");
+}
+noButton.onclick = function() {
+    yesButton.classList.remove("active");
+    noButton.classList.add("active");
+}
