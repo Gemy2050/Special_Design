@@ -28,6 +28,8 @@ colorLi.forEach(li => {
 document.documentElement.style.setProperty('--main-color', window.localStorage.getItem("color"));
 
 
+
+
 // Handle Random Backgrounds Or No
 let yesButton = document.querySelector(".random-background .yes");
 let noButton = document.querySelector(".random-background .no");
@@ -44,13 +46,16 @@ document.querySelectorAll(".random-background span").forEach(el=> {
 
         if(yesButton.classList.contains("active")) {
             backgroundOption = true;
+            window.localStorage.setItem("random", true);
+            window.localStorage.setItem("active", "yes");
             Random();
         } else if(noButton.classList.contains("active")) {
             backgroundOption = false;
+            window.localStorage.setItem("random", false);
+            window.localStorage.setItem("active", "no");
             clearInterval(backgroundInterval);
         }
     });
-
 });
 
 // Random Background Function
@@ -64,11 +69,20 @@ function Random() {
             let randomindex = Math.floor(Math.random() * imgArray.length);
             randomImage = imgArray[randomindex];
             landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
-        }, 2000);
+        }, 3000);
     }
 
 }
 Random();
+
+if(localStorage.getItem("active") == "yes") {
+    yesButton.classList.add("active");
+    noButton.classList.remove("active");
+} else {
+    noButton.classList.add("active");
+    yesButton.classList.remove("active");
+    clearInterval(backgroundInterval);
+}
 
 
 // Handle Burger Icon Action
@@ -88,4 +102,3 @@ borgerIcon.onclick = () => {
         document.querySelector(".toggle-setting").style.visibility = "hidden";
     }
 };
-
