@@ -15,6 +15,7 @@ document.querySelector(".landing-page").onclick = function() {
 // Switch Colors
 let colorLi = document.querySelectorAll(".colors-list li");
 colorLi.forEach(li => {
+
     li.addEventListener("click", (e)=> {
         // set property on root node
         document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
@@ -24,10 +25,13 @@ colorLi.forEach(li => {
         });
         e.target.classList.add("active");
     });
+
+    if(window.localStorage.getItem("color") == li.dataset.color)
+    li.classList.add("active")
+    else li.classList.remove("active");
+
 });
 document.documentElement.style.setProperty('--main-color', window.localStorage.getItem("color"));
-
-
 
 
 // Handle Random Backgrounds Or No
@@ -63,7 +67,6 @@ let landing = document.querySelector(".landing-page");
 let imgArray = ["img1", "img2", "img3", "img4", "img5", "img6"];
 let backgroundInterval, randomImage;
 function Random() {
-
     if(backgroundOption == true) {
             backgroundInterval = setInterval(() => {
             let randomindex = Math.floor(Math.random() * imgArray.length);
@@ -71,7 +74,6 @@ function Random() {
             landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
         }, 3000);
     }
-
 }
 Random();
 

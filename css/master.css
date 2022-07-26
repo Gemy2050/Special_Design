@@ -75,6 +75,12 @@ body {
 }
 .setting-box .option-box h4 {
     margin: 0;
+    font-size: 14px;
+}
+@media(max-width: 768px) {
+    .setting-box .option-box h4 {
+        font-size: 13px;
+    }
 }
 .setting-box .option-box .colors-list {
     list-style: none;
@@ -138,7 +144,7 @@ body {
     }
 }
 /* End Setting Box */
-/* Start Landing */
+/* Start Landing */ 
 .landing-page {
     min-height: 100vh;
     background-image: url(../images/img4.jpg);
