@@ -72,7 +72,7 @@ function Random() {
             let randomindex = Math.floor(Math.random() * imgArray.length);
             randomImage = imgArray[randomindex];
             landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
-        }, 3000);
+        }, 10000);
     }
 }
 Random();
