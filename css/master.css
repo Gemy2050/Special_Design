@@ -1,6 +1,8 @@
 /* Start Variables */
 :root {
     --main-color: #ff4335;
+    --padding-top: 50px;
+    --padding-bottom: 50px;
 }
 /* End Variables */
 /* Start Global Rules */
@@ -274,3 +276,49 @@ body {
     }
 }
 /* End Landing */
+/* Start About Us */
+.about-us {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+.about-us .container {
+    display: flex;
+}
+.about-us .info-box {
+    flex: 1;
+    padding: 30px;
+}
+.about-us .info-box h2{
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+}
+.about-us .info-box p {
+    margin: 15px 0 0;
+    line-height: 2;
+    color: #666;
+    font-size: 17px;
+}
+.about-us .image-box {
+    flex: 1;
+    text-align: center;
+}
+.about-us .image-box img {
+    width: 250px;
+}
+@media(max-width: 768px) {
+    .about-us .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-us .info-box {
+        padding: 10px;
+    }
+    .about-us .info-box p {
+        max-width: 100%;
+        margin: 10px 0 0 0;
+        font-size: 15px;
+    }
+}
+/* EndAbout Us */

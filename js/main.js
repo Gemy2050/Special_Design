@@ -12,6 +12,7 @@ document.querySelector(".landing-page").onclick = function() {
 }
 
 
+
 // Switch Colors
 let colorLi = document.querySelectorAll(".colors-list li");
 colorLi.forEach(li => {
