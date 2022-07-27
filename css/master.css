@@ -289,13 +289,13 @@ body {
     padding: 30px;
 }
 .about-us .info-box h2{
-    margin: 0;
+    margin: 0 0 30px;
     font-weight: bold;
     font-size: 30px;
     color: var(--main-color);
 }
 .about-us .info-box p {
-    margin: 15px 0 0;
+    margin: 0;
     line-height: 2;
     color: #666;
     font-size: 17px;
@@ -352,7 +352,7 @@ body {
     font-size: 30px;
     color: var(--main-color);
     text-align: center;
-    margin-top: 0;
+    margin: 0 0 30px;
 }
 .our-skills .skills .skill-box {
     margin-bottom: 30px;
@@ -360,7 +360,7 @@ body {
 .our-skills .skill-box .skill-name{
     display: flex;
     justify-content: space-between;
-    position: relative;
+    margin-bottom: 10px;
 }
 .our-skills .skill-box .skill-name span {
     font-size: 15px;
@@ -393,7 +393,7 @@ body {
     font-size: 30px;
     color: var(--main-color);
     text-align: center;
-    margin: 0 0 50px;
+    margin: 0 0 30px;
 }
 .gallery .image-box {
     text-align: center;
@@ -425,6 +425,7 @@ body {
     border: 1px solid #ccc;
     padding: 20px;
     z-index: 10001;
+    text-align: center;
 }
 .popup-box img {
     max-width: 100%;
@@ -449,5 +450,14 @@ body {
     cursor: pointer;
     font-weight: bold;
     border-radius: 50%;
+}
+@media(max-width: 768px) {
+    .popup-box {
+        width: calc(100% - 45px);
+    }
+    .gallery .image-box img {
+        width: 100%;
+        max-height: 300px !important;
+    }
 }
 /* End Gallery */
