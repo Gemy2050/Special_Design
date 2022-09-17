@@ -41,10 +41,7 @@ let colorLi = document.querySelectorAll(".colors-list li");
 colorLi.forEach((li) => {
   li.addEventListener("click", (e) => {
     // set property on root node
-    document.documentElement.style.setProperty(
-      "--main-color",
-      e.target.dataset.color
-    );
+    document.documentElement.style.setProperty("--main-color", e.target.dataset.color);
     window.localStorage.setItem("color", e.target.dataset.color);
     colorLi.forEach((color) => {
       color.classList.remove("active");
@@ -56,10 +53,7 @@ colorLi.forEach((li) => {
     li.classList.add("active");
   else li.classList.remove("active");
 });
-document.documentElement.style.setProperty(
-  "--main-color",
-  window.localStorage.getItem("color")
-);
+document.documentElement.style.setProperty("--main-color", window.localStorage.getItem("color"));
 
 // Handle Random Backgrounds Or No
 let yesButton = document.querySelector(".random-background .yes");
@@ -130,7 +124,7 @@ let ourGallery = document.querySelectorAll(".gallery img");
 ourGallery.forEach(img => {
   img.addEventListener("click", ()=> {
 
-    let overlay = document.createElement("div");
+  let overlay = document.createElement("div");
   overlay.className = "popup-overlay";
   document.body.appendChild(overlay);
 
