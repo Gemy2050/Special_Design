@@ -19,6 +19,8 @@ html {
 
 body {
   font-family: 'open-sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -672,7 +674,7 @@ body {
 
 .features .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
 }
 
@@ -701,7 +703,8 @@ body {
 .features .feat-box p {
   color: #767272;
   line-height: 1.7;
-  max-width: 100%;
+  /* width: 80%; */
+  /* margin: 0 auto; */
 }
 
 .features .feat-box img {
