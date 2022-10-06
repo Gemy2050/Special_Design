@@ -657,7 +657,11 @@ body {
   border-color: transparent white transparent transparent;
   left: -20px;
 }
-
+@media(max-width: 767px) {
+  .timeline .timeline-content .left, .timeline .timeline-content .right {
+    width: 100%;
+  }
+}
 /* End Timeline */
 /* Start Features */
 .features {
@@ -703,8 +707,6 @@ body {
 .features .feat-box p {
   color: #767272;
   line-height: 1.7;
-  /* width: 80%; */
-  /* margin: 0 auto; */
 }
 
 .features .feat-box img {
@@ -712,3 +714,86 @@ body {
 }
 
 /* End Features */
+/* Start Testimoials */
+.testomonials {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  position: relative;
+  min-height: 450px;
+}
+
+.testomonials::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+}
+
+.testomonials::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #222;
+}
+.testomonials h2 {
+  position: relative;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  z-index: 1;
+}
+
+.testomonials .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.testomonials .box {
+  background-color: white;
+  color: #666;
+  padding: 20px;
+}
+
+.testomonials .box > p {
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 18px;
+}
+
+.testomonials .box .person-info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+.testomonials .person-info img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: -10px;
+}
+
+.testomonials .person-info h4 {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+.testomonials .person-info p {
+  margin: 0;
+  color: #777;
+  font-weight: bold;
+}
+
+/* End Testimoials */
