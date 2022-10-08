@@ -48,6 +48,7 @@ body {
     width: 1170px;
   }
 }
+/* Handle Scroll Bar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -759,6 +760,7 @@ body {
   font-size: 35px;
   text-align: center;
   z-index: 1;
+  margin: 40px 0 50;
 }
 
 .testomonials .container {
