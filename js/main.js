@@ -90,7 +90,7 @@ function Random() {
     backgroundInterval = setInterval(() => {
       let randomindex = Math.floor(Math.random() * imgArray.length);
       randomImage = imgArray[randomindex];
-      landing.style.backgroundImage = `url(../images/${randomImage}.jpg)`;
+      landing.style.backgroundImage = `url('images/${randomImage}.jpg')`;
     }, 10000);
   }
 }
