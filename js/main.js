@@ -106,6 +106,49 @@ if (localStorage.getItem("active") == "yes") {
 }
 
 
+// Handle Dark Mode
+let enableDark = document.querySelector(".dark-mode .yes");
+let disableDark = document.querySelector(".dark-mode .no");
+
+  document.querySelectorAll(".dark-mode span").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      document.querySelector(".dark-mode .active").classList.remove("active");
+      e.target.classList.add("active");
+      if(enableDark.classList.contains("active")) {
+        window.localStorage.setItem("dark", true)
+      } else {
+        window.localStorage.setItem("dark", false);
+      }
+      darkMode();
+    });
+  });
+
+function darkMode() {
+      if (window.localStorage.getItem("dark") == "true") {
+        document.documentElement.style.setProperty("--main-background", "#222");
+        document.documentElement.style.setProperty(
+          "--main-background-alt",
+          "#191919"
+        );
+        document.body.style.color = "white";
+        enableDark.classList.add("active");
+        disableDark.classList.remove("active");
+      } else {
+        document.documentElement.style.setProperty("--main-background", "#fff");
+        document.documentElement.style.setProperty(
+          "--main-background-alt",
+          "#ddd"
+        );
+        document.body.style.color = "black";
+        enableDark.classList.remove("active");
+        disableDark.classList.add("active");
+      }
+
+}
+darkMode();
+
+
+
 // Animate Skills Width
 function widthProgress() {
   let skillSection = document.querySelector(".our-skills");

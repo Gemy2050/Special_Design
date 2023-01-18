@@ -1,6 +1,8 @@
 /* Start Variables */
 :root {
   --main-color: #ff4335;
+  --main-background: #fff;
+  --main-background-alt: #DDD;
   --padding-top: 50px;
   --padding-bottom: 50px;
 }
@@ -136,7 +138,7 @@ input[type='number']::-webkit-outer-spin-button{
 }
 
 .setting-box .option-box .colors-list li.active {
-  border: 2px solid #FFF;
+  border: 2px solid white;
   opacity: 1;
 }
 
@@ -347,6 +349,7 @@ input[type='number']::-webkit-outer-spin-button{
 .about-us {
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
+  background-color: var(--main-background);
 }
 
 .about-us .container {
@@ -403,7 +406,7 @@ input[type='number']::-webkit-outer-spin-button{
 .our-skills {
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
-  background-color: #DDD;
+  background-color: var(--main-background-alt);
 }
 
 .our-skills .container {
@@ -457,7 +460,7 @@ input[type='number']::-webkit-outer-spin-button{
 .skills .skill-box .skill-progress {
   position: relative;
   height: 30px;
-  background-color: #FFF;
+  background-color: var(--main-background);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -477,6 +480,7 @@ input[type='number']::-webkit-outer-spin-button{
 .gallery {
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
+  background-color: var(--main-background);
 }
 
 .gallery h2 {
@@ -493,7 +497,7 @@ input[type='number']::-webkit-outer-spin-button{
 
 .gallery .image-box img {
   width: 200px;
-  max-height: 130px;
+  height: 130px;
   margin: 5px;
   padding: 3px;
   background-color: #f6f6f6;
@@ -516,7 +520,7 @@ input[type='number']::-webkit-outer-spin-button{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--main-background);
   border: 1px solid #ccc;
   padding: 20px;
   z-index: 10001;
@@ -564,7 +568,7 @@ input[type='number']::-webkit-outer-spin-button{
 /* End Gallery */
 /* Start Timeline */
 .timeline {
-  background-color: #DDD;
+  background-color: var(--main-background-alt);
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
 }
@@ -625,7 +629,7 @@ input[type='number']::-webkit-outer-spin-button{
 .timeline .timeline-content .right::before {
   content: '';
   position: absolute;
-  background-color: white;
+  background-color: var(--main-background);
   border: 3px solid var(--main-color);
   width: 14px;
   height: 14px;
@@ -634,7 +638,7 @@ input[type='number']::-webkit-outer-spin-button{
 }
 
 .timeline .timeline-content .content {
-  background-color: white;
+  background-color: var(--main-background);
   padding: 15px;
 }
 
@@ -683,6 +687,7 @@ input[type='number']::-webkit-outer-spin-button{
 .features {
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
+  background-color: var(--main-background);
 }
 
 .features h2 {
@@ -755,7 +760,7 @@ input[type='number']::-webkit-outer-spin-button{
   height: 100%;
   right: 0;
   top: 0;
-  background-color: #222;
+  background-color: #333;
 }
 .testomonials h2 {
   position: relative;
@@ -775,7 +780,7 @@ input[type='number']::-webkit-outer-spin-button{
 }
 
 .testomonials .box {
-  background-color: white;
+  background-color: var(--main-background);
   color: #666;
   padding: 20px;
 }
@@ -821,6 +826,7 @@ input[type='number']::-webkit-outer-spin-button{
   background-image: url(../images/contact.png);
   background-size: cover;
   position: relative;
+  background-color: var(--main-background);
 }
 .contact::before {
   content: '';
@@ -829,7 +835,7 @@ input[type='number']::-webkit-outer-spin-button{
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff85;
+  background-color: #ffffff85;  /* #ffffff85 */
 }
 .contact h2 {
   color: var(--main-color);
@@ -864,7 +870,7 @@ input[type='number']::-webkit-outer-spin-button{
   border-color: var(--main-color) var(--main-color) var(--main-color) #DDD;
 }
 .contact form .left input:focus::placeholder {
-  color: white;
+  color: transparent;
   transition: .3s;
 }
 .contact form .right {
@@ -885,14 +891,14 @@ input[type='number']::-webkit-outer-spin-button{
   border-color: var(--main-color) #DDD var(--main-color) var(--main-color);
 }
 .contact form .right textarea:focus::placeholder {
-  color: white;
+  color: transparent;
   transition: .3s;
 }
 .contact form .right button {
   width: 100%;
   padding: 10px;
   background-color: var(--main-color);
-  color: #FFF;
+  color: white;
   cursor: pointer;
   outline: none;
   border: none;
@@ -913,6 +919,7 @@ input[type='number']::-webkit-outer-spin-button{
   }
 }
 /* End Contact */
+/* Start Footer */
 footer {
   background-color: #222;
   color: white;
@@ -925,3 +932,4 @@ footer {
     font-size: 16px;
   }
 }
+/* End Footer */
