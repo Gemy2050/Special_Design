@@ -388,6 +388,7 @@ input[type='number']::-webkit-outer-spin-button{
   .about-us .container {
     flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
 
   .about-us .info-box {
@@ -497,7 +498,7 @@ input[type='number']::-webkit-outer-spin-button{
 
 .gallery .image-box img {
   width: 200px;
-  height: 130px;
+  max-height: 250px;
   margin: 5px;
   padding: 3px;
   background-color: #f6f6f6;
@@ -561,7 +562,6 @@ input[type='number']::-webkit-outer-spin-button{
 
   .gallery .image-box img {
     width: 100%;
-    max-height: 400px !important;
   }
 }
 

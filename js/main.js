@@ -83,7 +83,7 @@ document.querySelectorAll(".random-background span").forEach((el) => {
 
 // Random Background Function
 let landing = document.querySelector(".landing-page");
-let imgArray = [ "img3", "img4", "img5", "img6", "01", "02", "03", "04", "05", "07", "08", "10"];
+let imgArray = [ "img3", "img4", "img5", "img6", "01", "03", "04", "05", "07", "08", "10"];
 let backgroundInterval, randomImage;
 function Random() {
   if (backgroundOption == true) {
