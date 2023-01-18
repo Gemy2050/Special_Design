@@ -68,7 +68,15 @@ input[type='number']::-webkit-outer-spin-button{
   appearance: none;
 }
 /* End Global Rules */
-/* Start Setting Box */
+/* Start Setting Box & ScrollBar*/
+.scroller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  height: 3px;
+  z-index: 1000;
+}
 .setting-box {
   position: fixed;
   left: -220px;
@@ -493,12 +501,11 @@ input[type='number']::-webkit-outer-spin-button{
 
 .gallery .image-box {
   text-align: center;
-
 }
 
 .gallery .image-box img {
   width: 200px;
-  max-height: 250px;
+  height: 170px;
   margin: 5px;
   padding: 3px;
   background-color: #f6f6f6;

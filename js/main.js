@@ -70,12 +70,10 @@ document.querySelectorAll(".random-background span").forEach((el) => {
     if (yesButton.classList.contains("active")) {
       backgroundOption = true;
       window.localStorage.setItem("random", true);
-      window.localStorage.setItem("active", "yes");
       Random();
     } else if (noButton.classList.contains("active")) {
       backgroundOption = false;
       window.localStorage.setItem("random", false);
-      window.localStorage.setItem("active", "no");
       clearInterval(backgroundInterval);
     }
   });
@@ -96,7 +94,7 @@ function Random() {
 }
 Random();
 
-if (localStorage.getItem("active") == "yes") {
+if (localStorage.getItem("random") == true) {
   yesButton.classList.add("active");
   noButton.classList.remove("active");
 } else {
@@ -146,6 +144,46 @@ function darkMode() {
 
 }
 darkMode();
+
+// Handle ScrollBar
+let enableScroll = document.querySelector(".scroll-bar .yes");
+let disableScroll = document.querySelector(".scroll-bar .no");
+
+document.querySelectorAll(".scroll-bar span").forEach((el) => {
+  el.addEventListener("click", (e)=>{
+    document.querySelector(".scroll-bar .active").classList.remove("active");
+    e.target.classList.add("active");
+    if(enableScroll.classList.contains("active")) {
+      window.localStorage.setItem("scroll", true);
+    } else {
+      window.localStorage.setItem("scroll", false);
+    }
+    scrollBar();
+  });
+});
+
+function scrollBar() {
+
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scroller = document.querySelector(".scroller");
+
+  window.addEventListener("scroll", ()=> {
+    let scrollTop = document.documentElement.scrollTop;
+    scroller.style.width = `${(scrollTop / height) * 100}%`
+  });
+
+  if (window.localStorage.getItem("scroll") == "true") {
+    scroller.style.visibility = "visible";
+    enableScroll.classList.add("active");
+    disableScroll.classList.remove("active");
+  } else {
+    scroller.style.visibility = "hidden";
+    enableScroll.classList.remove("active");
+    disableScroll.classList.add("active");
+  }
+
+}
+scrollBar();
 
 
 
@@ -204,5 +242,3 @@ document.addEventListener("click", function(e) {
     document.querySelector(".popup-overlay").remove();
   }
 });
-
-
