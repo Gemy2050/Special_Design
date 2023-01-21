@@ -187,6 +187,20 @@ scrollBar();
 
 
 
+// Reset Button
+document.querySelector(".setting-box .reset").onclick = function () {
+
+  // localStorage.clear();
+  localStorage.removeItem("color");
+  localStorage.removeItem("dark");
+  localStorage.removeItem("random");
+
+  // Reload Window
+  window.location.reload();
+
+};
+
+
 // Animate Skills Width
 function widthProgress() {
   let skillSection = document.querySelector(".our-skills");
